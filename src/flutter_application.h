@@ -5,11 +5,13 @@
 #pragma once
 
 #include <flutter_embedder.h>
+//#include <embedder.h>
 
 #include <functional>
 #include <vector>
 
 #include "macros.h"
+#include "event_loop.h"
 
 namespace flutter {
 
@@ -31,7 +33,7 @@ class FlutterApplication {
                      RenderDelegate& render_delegate);
 
   ~FlutterApplication();
-
+  std::unique_ptr<flutter::EventLoop> event_loop_;
   bool IsValid() const;
 
   void ProcessEvents();
@@ -44,6 +46,7 @@ class FlutterApplication {
   bool valid_;
   RenderDelegate& render_delegate_;
   FlutterEngine engine_ = nullptr;
+  
   int last_button_ = 0;
 
   bool SendFlutterPointerEvent(FlutterPointerPhase phase, double x, double y);

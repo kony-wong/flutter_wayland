@@ -25,6 +25,7 @@ class WaylandDisplay : public FlutterApplication::RenderDelegate {
   bool IsValid() const;
 
   bool Run();
+  wl_display* getDisplay();
 
  private:
   static const wl_registry_listener kRegistryListener;

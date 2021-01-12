@@ -42,3 +42,8 @@ asset_bundle_path: The Flutter application code needs to be snapshotted using
                    Flutter tools.
 
 ```
+
+使用本地的Engine来编译的步骤：
+1. 将engine.zip 放置在build目录,同时`cd ./build/`
+2. `cmake -G Ninja ../`
+3. ninja
